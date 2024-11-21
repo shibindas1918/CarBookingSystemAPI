@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35431.28
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarBookingSystemAPI", "CarBookingSystemAPI\CarBookingSystemAPI.csproj", "{2135B5A3-3DA2-403E-8FEB-F988C2601679}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarBookingSystemAPI", "CarBookingSystemAPI\CarBookingSystemAPI.csproj", "{2135B5A3-3DA2-403E-8FEB-F988C2601679}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
