@@ -55,7 +55,6 @@ namespace CarBookingSystemAPI.Controllers
                             JOIN Suppliers s ON c.SupplierId = s.SupplierId
                             WHERE 1 = 1"; 
 
-            // Add conditions based on provided price parameters
             if (minPrice.HasValue)
             {
                 query += $" AND c.Price >= {minPrice.Value}";
@@ -65,8 +64,6 @@ namespace CarBookingSystemAPI.Controllers
                 query += $" AND c.Price <= {maxPrice.Value}";
             }
 
-
-            // Call the DatabaseHelper to execute the query
 
             try
             {
@@ -99,8 +96,7 @@ namespace CarBookingSystemAPI.Controllers
             {
                 return BadRequest();
             }
-    
-                string query = $@"INSERT INTO cars (CarModel, Category,supplierid,price) 
+                 string query = $@"INSERT INTO cars (CarModel, Category,supplierid,price) 
                                VALUES ('{car.CarModel}', '{car.Category}','{car.supplierid}','{car.price}')";
 
            
@@ -131,6 +127,23 @@ namespace CarBookingSystemAPI.Controllers
                 return StatusCode(500, $"Internal sever error:{ex.Message}");
 
             }
+        }
+
+        [HttpPut("secondary_update")]
+        public ActionResult UpdateSecondaryCar(Car car)
+        {
+            if(car ==null || string.IsNullOrEmpty(car.CarModel) || string.IsNullOrEmpty(car.Category))
+            {
+                return BadRequest();
+            }
+            string query = $@"update cars set carmodel = '{car.CarModel}',category='{car.Category}',supplierid='{car.supplierid}' where carid = '{car.CarId}'";
+            try
+            {
+                _databaseHelper.ExecuteQuery(query);
+                return Ok(new { message = "The supplier detail has been updated ", data = car });
+            }
+            catch (Exception ex) { return StatusCode(500, $"internal sever error:{ex.Message}"); }
+
         }
 
         [HttpPut]

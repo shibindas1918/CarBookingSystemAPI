@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+//builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddSingleton(new DatabaseHelper(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 builder.Services.AddCors(options =>
 {
@@ -20,7 +20,6 @@ builder.Services.AddCors(options =>
                .AllowAnyMethod();
     });
 });
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
