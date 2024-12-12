@@ -16,6 +16,8 @@ namespace CarBookingSystemAPI.Controllers
         {
             _databaseHelper = databaseHelper;
         }
+
+        // Get Mthod to get all the Cars 
         [HttpGet("Car")]
         public ActionResult GetCars()
         {
@@ -46,6 +48,8 @@ namespace CarBookingSystemAPI.Controllers
 
 
         }
+
+        //Get Method to search for cars 
         [HttpGet("Search")]
         public ActionResult SearchCars( decimal? minPrice, decimal? maxPrice)
         {
@@ -88,6 +92,7 @@ namespace CarBookingSystemAPI.Controllers
 
             
         }
+        // Post Method to Create a new car details 
 
         [HttpPost]
         public ActionResult CreateCar (Car car)
@@ -110,6 +115,8 @@ namespace CarBookingSystemAPI.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+     
+        // Delete method to delete a particular car detatils 
 
         [HttpDelete]
         public ActionResult Deletecars(int id)
@@ -128,7 +135,7 @@ namespace CarBookingSystemAPI.Controllers
 
             }
         }
-
+        // update method for the updating a particular car 
         [HttpPut("secondary_update")]
         public ActionResult UpdateSecondaryCar(Car car)
         {
@@ -146,6 +153,7 @@ namespace CarBookingSystemAPI.Controllers
 
         }
 
+        //Primary update method for car 
         [HttpPut]
         public ActionResult UpdateSupplier(Car cars)
         {
