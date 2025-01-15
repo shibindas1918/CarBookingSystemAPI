@@ -108,7 +108,7 @@ namespace CarBookingSystemAPI.Controllers
             try
             {
                 _databaseHelper.ExecuteQuery(query);
-                return Ok("Supplier added successfully.");
+                return Ok("Car added successfully.");
             }
             catch (Exception ex)
             {
@@ -147,7 +147,7 @@ namespace CarBookingSystemAPI.Controllers
             try
             {
                 _databaseHelper.ExecuteQuery(query);
-                return Ok(new { message = "The supplier detail has been updated ", data = car });
+                return Ok(new { message = "The Car detail has been updated ", data = car });
             }
             catch (Exception ex) { return StatusCode(500, $"internal sever error:{ex.Message}"); }
 
@@ -167,7 +167,7 @@ namespace CarBookingSystemAPI.Controllers
                 try
                 {
                     _databaseHelper.ExecuteQuery(query);
-                    return Ok(new { message = "The suppiler details has been updated ", data = cars });
+                    return Ok(new { message = "The Car details has been updated ", data = cars });
 
                 }
                 catch (Exception ex)
