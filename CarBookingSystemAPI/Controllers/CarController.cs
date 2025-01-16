@@ -87,7 +87,7 @@ namespace CarBookingSystemAPI.Controllers
                 return Ok(cars);
             }catch (Exception ex)
             {
-                return StatusCode(500 ,$"internal sever error {ex.Message}");
+                return StatusCode(500 ,$"Internal sever error {ex.Message}");
             }
 
             
