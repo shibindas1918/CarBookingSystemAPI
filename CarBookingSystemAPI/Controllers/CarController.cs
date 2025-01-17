@@ -17,7 +17,7 @@ namespace CarBookingSystemAPI.Controllers
             _databaseHelper = databaseHelper;
         }
 
-        // Get Mthod to get all the Cars 
+        // Get Method to get all the Cars 
         [HttpGet("Car")]
         public ActionResult GetCars()
         {
@@ -116,7 +116,7 @@ namespace CarBookingSystemAPI.Controllers
             }
         }
      
-        // Delete method to delete a particular car detatils 
+        // Delete Method to delete a particular car detatils 
 
         [HttpDelete]
         public ActionResult Deletecars(int id)
@@ -135,7 +135,7 @@ namespace CarBookingSystemAPI.Controllers
 
             }
         }
-        // update method for the updating a particular car 
+        // Update Method for the updating a particular car 
         [HttpPut("secondary_update")]
         public ActionResult UpdateSecondaryCar(Car car)
         {
