@@ -20,7 +20,7 @@ namespace CarBookingSystemAPI.Controllers
         }
 
 
-        [HttpGet("supplier")]
+        [HttpGet("Supplier")]
         public ActionResult Getsupplier()
         {
             string query = "Select *from suppliers";
@@ -92,7 +92,7 @@ namespace CarBookingSystemAPI.Controllers
             }
         }
 
-        [HttpPut("updateed")]
+        [HttpPut("Updated")]
         public ActionResult UpdateSupplier(Supplier supplier)
         {
             if (supplier == null || string.IsNullOrEmpty(supplier.Name) || string.IsNullOrEmpty(supplier.Contact) || string.IsNullOrEmpty(supplier.Address))
