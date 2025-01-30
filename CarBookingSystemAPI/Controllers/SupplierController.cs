@@ -20,7 +20,7 @@ namespace CarBookingSystemAPI.Controllers
         }
 
 
-        [HttpGet("Supplier")]
+        [HttpGet("supplier")]
         public ActionResult Getsupplier()
         {
             string query = "Select *from suppliers";
@@ -82,7 +82,7 @@ namespace CarBookingSystemAPI.Controllers
             try
             {
                 _databaseHelper.ExecuteQuery(deleteQuery);
-                return Ok(new { message = "the suppiler has been removed ", data = id });
+                return Ok(new { message = " The suppiler has been removed ", data = id });
 
             }
             catch (Exception ex)
@@ -92,7 +92,7 @@ namespace CarBookingSystemAPI.Controllers
             }
         }
 
-        [HttpPut("Updated")]
+        [HttpPut("updateed")]
         public ActionResult UpdateSupplier(Supplier supplier)
         {
             if (supplier == null || string.IsNullOrEmpty(supplier.Name) || string.IsNullOrEmpty(supplier.Contact) || string.IsNullOrEmpty(supplier.Address))
